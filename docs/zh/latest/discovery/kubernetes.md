@@ -24,11 +24,11 @@ title: Kubernetes
 ## 基于 Kubernetes 的服务发现
 
 Kubernetes 服务发现以 [_List-Watch_](https://kubernetes.io/docs/reference/using-api/api-concepts) 方式监听 [_Kubernetes_](https://kubernetes.io) 集群 [_Endpoints_](https://kubernetes.io/docs/concepts/services-networking/service) 资源的实时变化，
-资源,并将其值存储到 ngx.shared.kubernetes 中 \
+资源，并将其值存储到 ngx.shared.kubernetes 中 \
 同时遵循 [_APISIX Discovery 规范_](https://github.com/apache/apisix/blob/master/docs/zh/latest/discovery.md) 提供了节点查询接口
 
 ## Kubernetes 服务发现的使用
-Kubernetes 服务发现支持单集群,多集群运行模式. 分别适用于待发现的服务分布在单个或多个 Kubernetes 集群的情况.
+Kubernetes 服务发现支持单集群，多集群运行模式。分别适用于待发现的服务分布在单个或多个 Kubernetes 集群的情况。
 
 ### 单集群模式 Kubernetes 服务发现的配置格式
 
@@ -159,7 +159,7 @@ nodes("default/plat-dev:port") 调用会得到如下的返回值：
 
 ### 多集群模式 Kubernetes 服务发现的配置格式
 
-多Kubernetes 服务发现的完整配置如下：
+多 Kubernetes 服务发现的完整配置如下：
 
 ```yaml
 discovery:
@@ -213,7 +213,7 @@ discovery:
     shared_size: 1m #default 1m
 ```
 
-多Kubernetes 服务发现没有为 service,client 域填充默认值，你需要根据集群配置情况自行填充.
+多 Kubernetes 服务发现没有为 service,client 域填充默认值，你需要根据集群配置情况自行填充。
 
 ### 多集群模式 Kubernetes 服务发现的查询接口
 
@@ -289,7 +289,7 @@ nodes("default/plat-dev:port") 调用会得到如下的返回值：
 ---
 
 > Q: [_ServiceAccount_](https://kubernetes.io/docs/tasks/configure-pod-container/configure-service-account/) 需要的权限有哪些 \
-> A: [_ServiceAccount_](https://kubernetes.io/docs/tasks/configure-pod-container/configure-service-account/) 需要集群级[ get,list,watch ] endpoints 资源的的权限,其声明式定义如下:
+> A: [_ServiceAccount_](https://kubernetes.io/docs/tasks/configure-pod-container/configure-service-account/) 需要集群级 [ get,list,watch ] endpoints 资源的的权限，其声明式定义如下：
 >
 >```yaml
 >kind: ServiceAccount
