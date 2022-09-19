@@ -288,8 +288,8 @@ nodes("default/plat-dev:port") 调用会得到如下的返回值：
 
 ---
 
-> Q: ServiceAccount 需要的权限有哪些 \
-> A: ServiceAccount 需要集群级[ get,list,watch ] endpoints 资源的的权限,其声明式定义如下:
+> Q: [_ServiceAccount_](https://kubernetes.io/docs/tasks/configure-pod-container/configure-service-account/) 需要的权限有哪些 \
+> A: [_ServiceAccount_](https://kubernetes.io/docs/tasks/configure-pod-container/configure-service-account/) 需要集群级[ get,list,watch ] endpoints 资源的的权限,其声明式定义如下:
 >
 >```yaml
 >kind: ServiceAccount
@@ -325,8 +325,8 @@ nodes("default/plat-dev:port") 调用会得到如下的返回值：
 
 ---
 
-> Q: 怎样获取指定 ServiceAccount 的 Token 值 \
-> A: 假定你指定的 ServiceAccount 资源名为 “kubernetes-discovery“, 命名空间为 “apisix”, 请按如下步骤获取其 Token 值
+> Q: 怎样获取指定 [_ServiceAccount_](https://kubernetes.io/docs/tasks/configure-pod-container/configure-service-account/) 的 Token 值 \
+> A: 假定你指定的 [_ServiceAccount_](https://kubernetes.io/docs/tasks/configure-pod-container/configure-service-account/) 资源名为 “kubernetes-discovery“, 命名空间为 “apisix”, 请按如下步骤获取其 Token 值
 >
 > 1. 获取 _Secret_ 资源名: \
      > 执行以下命令，输出的第一列内容就是目标 _Secret_ 资源名
