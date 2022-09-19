@@ -28,6 +28,7 @@ Kubernetes 服务发现以 [_List-Watch_](https://kubernetes.io/docs/reference/u
 同时遵循 [_APISIX Discovery 规范_](https://github.com/apache/apisix/blob/master/docs/zh/latest/discovery.md) 提供了节点查询接口
 
 ## Kubernetes 服务发现的使用
+
 Kubernetes 服务发现支持单集群，多集群运行模式。分别适用于待发现的服务分布在单个或多个 Kubernetes 集群的情况。
 
 ### 单集群模式 Kubernetes 服务发现的配置格式

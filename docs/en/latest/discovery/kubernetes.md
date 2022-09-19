@@ -292,7 +292,6 @@ a nodes("release/default/plat-dev:port") call will get follow result:
 
 ---
 
-
 > Q: What permissions do [_ServiceAccount_](https://kubernetes.io/docs/tasks/configure-pod-container/configure-service-account/) require \
 > A: ServiceAccount requires the permissions of cluster-level [ get, list, watch ] endpoints resources, the declarative definition is as follows:
 >
