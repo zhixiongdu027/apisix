@@ -24,16 +24,16 @@ title: Kubernetes
 ## 基于 Kubernetes 的服务发现
 
 Kubernetes 服务发现以 [_List-Watch_](https://kubernetes.io/docs/reference/using-api/api-concepts) 方式监听 [_Kubernetes_](https://kubernetes.io) 集群 [_Endpoints_](https://kubernetes.io/docs/concepts/services-networking/service) 资源的实时变化，
-资源，并将其值存储到 ngx.shared.kubernetes 中 \
+资源,并将其值存储到 ngx.shared.DICT 中 \
 同时遵循 [_APISIX Discovery 规范_](https://github.com/apache/apisix/blob/master/docs/zh/latest/discovery.md) 提供了节点查询接口
 
 ## Kubernetes 服务发现的使用
 
-Kubernetes 服务发现支持单集群，多集群运行模式。 分别适用于待发现的服务分布在单个或多个 Kubernetes 集群的情况。
+Kubernetes 服务发现支持单集群，多集群模式。分别适用于待发现的服务分布在单个或多个 Kubernetes 的情况。
 
 ### 单集群模式 Kubernetes 服务发现的配置格式
 
-Kubernetes 服务发现的完整配置如下：
+单集群模式 Kubernetes 服务发现的完整配置如下：
 
 ```yaml
 discovery:
@@ -82,18 +82,18 @@ discovery:
     label_selector: |-
       first="a",second="b"
 
-    # reserved lua shared memory size,1m memory can store about 1000 pieces of endpoint
+    # reserved lua shared memory size, 1m memory can store about 1000 pieces of endpoint
     shared_size: 1m #default 1m
 ```
 
-如果 Kubernetes 服务发现运行在 Pod 内，你可以使用最简配置：
+如果 Kubernetes 服务发现运行在 Pod 内,你可以使用最简配置：
 
 ```yaml
 discovery:
   kubernetes: { }
 ```
 
-如果 Kubernetes 服务发现运行在 Pod 外，你需要新建或选取指定的 [_ServiceAccount_](https://kubernetes.io/docs/tasks/configure-pod-container/configure-service-account/), 获取其 Token 值，然后使用如下配置：
+如果 Kubernetes 服务发现运行在 Pod 外,你需要新建或选取指定的 [_ServiceAccount_](https://kubernetes.io/docs/tasks/configure-pod-container/configure-service-account/), 获取其 Token 值,然后使用如下配置：
 
 ```yaml
 discovery:
@@ -109,7 +109,7 @@ discovery:
 
 ### 单集群模式 Kubernetes 服务发现的查询接口
 
-Kubernetes 服务发现遵循 [_APISIX Discovery 规范_](https://github.com/apache/apisix/blob/master/docs/zh/latest/discovery.md) 提供查询接口
+单集群模式 Kubernetes 服务发现遵循 [_APISIX Discovery 规范_](https://github.com/apache/apisix/blob/master/docs/zh/latest/discovery.md) 提供节点查询接口
 
 **函数：**
 nodes(service_name)
@@ -160,7 +160,7 @@ nodes("default/plat-dev:port") 调用会得到如下的返回值：
 
 ### 多集群模式 Kubernetes 服务发现的配置格式
 
-多 Kubernetes 服务发现的完整配置如下：
+多集群模式 Kubernetes 服务发现的完整配置如下：
 
 ```yaml
 discovery:
@@ -214,11 +214,11 @@ discovery:
     shared_size: 1m #default 1m
 ```
 
-多 Kubernetes 服务发现没有为 service,client 域填充默认值，你需要根据集群配置情况自行填充。
+多集群模式 Kubernetes 服务发现没有为 service,client 域填充默认值，你需要根据集群配置情况自行填充。
 
 ### 多集群模式 Kubernetes 服务发现的查询接口
 
-Kubernetes 服务发现遵循 [_APISIX Discovery 规范_](https://github.com/apache/apisix/blob/master/docs/zh/latest/discovery.md) 提供查询接口
+多集群模式 Kubernetes 服务发现遵循 [_APISIX Discovery 规范_](https://github.com/apache/apisix/blob/master/docs/zh/latest/discovery.md) 提供节点查询接口
 
 **函数：**
 nodes(service_name)
@@ -285,7 +285,7 @@ nodes("default/plat-dev:port") 调用会得到如下的返回值：
 
 > Q: APISIX 继承了 Nginx 的多进程模型，是否意味着每个 APISIX 工作进程都会监听 Kubernetes Endpoints \
 > A: Kubernetes 服务发现只使用特权进程监听 Kubernetes Endpoints，然后将其值存储\
-> 到 ngx.shared.kubernetes，工作进程通过查询 ngx.shared.kubernetes 来获取结果
+> 到 ngx.shared.DICT, 工作进程通过查询 ngx.shared.DICT 来获取结果
 
 ---
 
