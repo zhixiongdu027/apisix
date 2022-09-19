@@ -24,7 +24,7 @@ title: Kubernetes
 ## 基于 Kubernetes 的服务发现
 
 Kubernetes 服务发现以 [_List-Watch_](https://kubernetes.io/docs/reference/using-api/api-concepts) 方式监听 [_Kubernetes_](https://kubernetes.io) 集群 [_Endpoints_](https://kubernetes.io/docs/concepts/services-networking/service) 资源的实时变化，
-资源,并将其值存储到 ngx.shared.DICT 中 \
+资源，并将其值存储到 ngx.shared.DICT 中 \
 同时遵循 [_APISIX Discovery 规范_](https://github.com/apache/apisix/blob/master/docs/zh/latest/discovery.md) 提供了节点查询接口
 
 ## Kubernetes 服务发现的使用
@@ -86,14 +86,14 @@ discovery:
     shared_size: 1m #default 1m
 ```
 
-如果 Kubernetes 服务发现运行在 Pod 内,你可以使用最简配置：
+如果 Kubernetes 服务发现运行在 Pod 内，你可以使用最简配置
 
 ```yaml
 discovery:
   kubernetes: { }
 ```
 
-如果 Kubernetes 服务发现运行在 Pod 外,你需要新建或选取指定的 [_ServiceAccount_](https://kubernetes.io/docs/tasks/configure-pod-container/configure-service-account/), 获取其 Token 值,然后使用如下配置：
+如果 Kubernetes 服务发现运行在 Pod 外，你需要新建或选取指定的 [_ServiceAccount_](https://kubernetes.io/docs/tasks/configure-pod-container/configure-service-account/), 获取其 Token 值，然后使用如下配置：
 
 ```yaml
 discovery:
@@ -285,7 +285,7 @@ nodes("default/plat-dev:port") 调用会得到如下的返回值：
 
 > Q: APISIX 继承了 Nginx 的多进程模型，是否意味着每个 APISIX 工作进程都会监听 Kubernetes Endpoints \
 > A: Kubernetes 服务发现只使用特权进程监听 Kubernetes Endpoints，然后将其值存储\
-> 到 ngx.shared.DICT, 工作进程通过查询 ngx.shared.DICT 来获取结果
+> 到 ngx.shared.DICT，工作进程通过查询 ngx.shared.DICT 来获取结果
 
 ---
 

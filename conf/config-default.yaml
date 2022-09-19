@@ -302,9 +302,9 @@ nginx_config:                     # config for render the template to generate n
 #       path: "logs/consul_kv.dump"
 #       expire: 2592000            # unit sec, here is 30 day
 #  kubernetes:
-#    ### kubernetes service discovery both support single-cluster and multi-cluster mode  
+#    ### kubernetes service discovery both support single-cluster and multi-cluster mode
 #    ### applicable to the case where the service is distributed in a single or multiple kubernetes clusters.
-#    
+#
 #    ### Single-Cluster Mode ###
 #    service:
 #      schema: https                     #apiserver schema, options [http, https], default https
