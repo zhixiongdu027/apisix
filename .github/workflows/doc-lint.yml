@@ -2,11 +2,15 @@ name: Doc Lint
 
 on:
   pull_request:
-    branches: [master,k8s, 'release/**']
+    branches: [ master,k8s,'release/**' ]
     paths:
       - 'docs/**'
       - '**/*.md'
-
+  push:
+    branches: [ master,k8s,'release/**' ]
+    paths:
+      - 'docs/**'
+      - '**/*.md'
 permissions:
   contents: read
 
