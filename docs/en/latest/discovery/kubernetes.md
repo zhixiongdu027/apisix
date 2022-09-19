@@ -124,7 +124,7 @@ the kubernetes service discovery provides a query interface in accordance with t
 
   + name: The name of the kubernetes endpoints
 
-  + portName: The portName of the kubernetes endpoints, if there is no portName, use targetPort, port instead
+  + portName: The ports.name value in the kubernetes endpoints, if there is no ports.name, use targetPort, port instead
 
 **return value:** \
   if the kubernetes endpoints value is as follows:
@@ -235,7 +235,7 @@ service_name should match pattern: _[id]/[namespace]/[name]:[portName]_
 
 + name: The name of the kubernetes endpoints
 
-+ portName: The portName of the kubernetes endpoints, if there is no portName, use targetPort, port instead
++ portName: The ports.name value in the kubernetes endpoints, if there is no ports.name, use targetPort, port instead
 
 **return value:** \
 if the kubernetes endpoints value is as follows:

@@ -29,7 +29,7 @@ Kubernetes 服务发现以 [_List-Watch_](https://kubernetes.io/docs/reference/u
 
 ## Kubernetes 服务发现的使用
 
-Kubernetes 服务发现支持单集群，多集群运行模式。分别适用于待发现的服务分布在单个或多个 Kubernetes 集群的情况。
+Kubernetes 服务发现支持单集群，多集群运行模式。 分别适用于待发现的服务分布在单个或多个 Kubernetes 集群的情况。
 
 ### 单集群模式 Kubernetes 服务发现的配置格式
 
@@ -121,7 +121,7 @@ service_name 必须满足格式: [namespace]/[name]:[portName]
 
 + name: Endpoints 的资源名
 
-+ portName: Endpoints 定义包含的 portName，如果 Endpoints 没有定义 ports.name，请依次使用 targetPort,Port 代替
++ portName: Endpoints 定义包含的 ports.name 值，如果 Endpoints 没有定义 ports.name，请依次使用 targetPort, port 代替
 
 **返回值：**
 以如下 Endpoints 为例：
@@ -232,7 +232,7 @@ service_name 必须满足格式: [id]/[namespace]/[name]:[portName]
 
 + name: Endpoints 的资源名
 
-+ portName: Endpoints 定义包含的 portName，如果 Endpoints 没有定义 ports.name，请依次使用 targetPort,Port 代替
++ portName: Endpoints 定义包含的 ports.name 值，如果 Endpoints 没有定义 ports.name，请依次使用 targetPort, port 代替
 
 **返回值：**
 以如下 Endpoints 为例：
